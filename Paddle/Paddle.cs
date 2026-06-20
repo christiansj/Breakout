@@ -14,7 +14,11 @@ public partial class Paddle : Area2D
 		ScreenSize = GetViewportRect().Size;
 		GD.Print(ScreenSize);
 	}
-
+	private void OnBodyEntered(Node2D body)
+    {
+        
+	
+    }
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{

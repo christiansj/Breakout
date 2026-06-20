@@ -6,7 +6,8 @@
 [node name="Main" type="Node" unique_id=1755997133]
 
 [node name="Paddle" parent="." unique_id=1743650328 instance=ExtResource("1_yh5la")]
-position = Vector2(288, 637)
+visible = false
+position = Vector2(287, 634)
 
-[node name="Ball" parent="." unique_id=1502484817 instance=ExtResource("2_2w1kt")]
-position = Vector2(342, 475)
+[node name="Ball" parent="." unique_id=155020253 instance=ExtResource("2_2w1kt")]
+position = Vector2(347, 367)
