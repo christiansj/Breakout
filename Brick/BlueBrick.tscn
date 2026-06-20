@@ -1,9 +1,15 @@
 [gd_scene format=3 uid="uid://dvu7r8uwde23f"]
 
+[ext_resource type="Script" uid="uid://md1nknxyseb8" path="res://Brick/BlueBrick.cs" id="1_lrraw"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4hwu2"]
+size = Vector2(73, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lrraw"]
 size = Vector2(75, 20)
 
-[node name="Brick" type="StaticBody2D" unique_id=1851945389]
+[node name="Brick" type="Area2D" unique_id=682907494]
+script = ExtResource("1_lrraw")
 metadata/_edit_group_ = true
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1325609584]
@@ -13,6 +19,14 @@ offset_right = 35.0
 offset_bottom = 12.0
 color = Color(0.007843138, 0.44705883, 1, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=475854644]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1817471763]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=475854644]
 position = Vector2(-2.5, 2)
 shape = SubResource("RectangleShape2D_4hwu2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=49003342]
+position = Vector2(-2.5, 2)
+shape = SubResource("RectangleShape2D_lrraw")
+
+[connection signal="body_entered" from="." to="." method="OnBodyEntered"]
