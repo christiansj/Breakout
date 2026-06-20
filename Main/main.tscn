@@ -2,38 +2,105 @@
 
 [ext_resource type="PackedScene" uid="uid://y4l246vmxhmb" path="res://Paddle/Paddle.tscn" id="1_yh5la"]
 [ext_resource type="PackedScene" uid="uid://c3arr2135u626" path="res://Ball/ball.tscn" id="2_2w1kt"]
+[ext_resource type="PackedScene" uid="uid://dvu7r8uwde23f" path="res://Brick/BlueBrick.tscn" id="3_qvhan"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2w1kt"]
-size = Vector2(10, 631)
+size = Vector2(36.625, 564.6875)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0mwmh"]
-size = Vector2(920, 10)
+size = Vector2(832, 42)
 
 [node name="Main" type="Node" unique_id=1755997133]
 
+[node name="Background" type="ColorRect" parent="." unique_id=500713794]
+z_index = -5
+offset_right = 898.0
+offset_bottom = 716.0
+color = Color(0.007843138, 0, 0, 1)
+
 [node name="Paddle" parent="." unique_id=1743650328 instance=ExtResource("1_yh5la")]
-position = Vector2(287, 634)
+position = Vector2(288, 660)
 
 [node name="Ball" parent="." unique_id=155020253 instance=ExtResource("2_2w1kt")]
 position = Vector2(347, 367)
 
 [node name="Left Wall" type="StaticBody2D" parent="." unique_id=1043024495]
-position = Vector2(-6, 307)
+position = Vector2(-3, 324)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Left Wall" unique_id=708992054]
-position = Vector2(2, 2.5)
+position = Vector2(17.875, 19.34375)
 shape = SubResource("RectangleShape2D_2w1kt")
+
+[node name="ColorRect" type="ColorRect" parent="Left Wall" unique_id=893491001]
+offset_top = -265.0
+offset_right = 39.0
+offset_bottom = 396.0
+color = Color(0.38039216, 0.38039216, 0.38039216, 1)
 
 [node name="Right Wall" type="StaticBody2D" parent="." unique_id=1425926053]
 position = Vector2(905, 310)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Right Wall" unique_id=1616585500]
-position = Vector2(-2, 8)
+position = Vector2(-23.3125, 24.3125)
 shape = SubResource("RectangleShape2D_2w1kt")
 
-[node name="Top Wall" type="StaticBody2D" parent="." unique_id=1156820790]
+[node name="ColorRect" type="ColorRect" parent="Right Wall" unique_id=345093633]
+offset_left = -44.0
+offset_top = -251.0
+offset_right = -4.0
+offset_bottom = 406.0
+color = Color(0.38039216, 0.38039216, 0.38039216, 1)
+
+[node name="Ceiling" type="StaticBody2D" parent="." unique_id=1156820790]
+position = Vector2(41, 100)
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Top Wall" unique_id=1122281156]
-position = Vector2(450, -5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling" unique_id=1122281156]
+position = Vector2(410, -21)
 shape = SubResource("RectangleShape2D_0mwmh")
+
+[node name="ColorRect" type="ColorRect" parent="Ceiling" unique_id=1360121286]
+offset_left = -5.0
+offset_top = -41.0
+offset_right = 826.0
+offset_bottom = -1.0
+color = Color(0.38039216, 0.38039216, 0.38039216, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1333731700]
+offset_left = 76.0
+offset_top = 322.0
+offset_right = 915.0
+offset_bottom = 336.0
+metadata/_edit_group_ = true
+
+[node name="Brick" parent="HBoxContainer" unique_id=1851945389 instance=ExtResource("3_qvhan")]
+
+[node name="Brick2" parent="HBoxContainer" unique_id=719363145 instance=ExtResource("3_qvhan")]
+position = Vector2(75, 0)
+
+[node name="Brick3" parent="HBoxContainer" unique_id=2074154816 instance=ExtResource("3_qvhan")]
+position = Vector2(150, 0)
+
+[node name="Brick4" parent="HBoxContainer" unique_id=229209044 instance=ExtResource("3_qvhan")]
+position = Vector2(225, 0)
+
+[node name="Brick5" parent="HBoxContainer" unique_id=423828785 instance=ExtResource("3_qvhan")]
+position = Vector2(300, 0)
+
+[node name="Brick6" parent="HBoxContainer" unique_id=1725619318 instance=ExtResource("3_qvhan")]
+position = Vector2(375, 0)
+
+[node name="Brick7" parent="HBoxContainer" unique_id=1132262093 instance=ExtResource("3_qvhan")]
+position = Vector2(450, 0)
+
+[node name="Brick8" parent="HBoxContainer" unique_id=373472343 instance=ExtResource("3_qvhan")]
+position = Vector2(525, 0)
+
+[node name="Brick9" parent="HBoxContainer" unique_id=322892117 instance=ExtResource("3_qvhan")]
+position = Vector2(600, 0)
+
+[node name="Brick10" parent="HBoxContainer" unique_id=1158638343 instance=ExtResource("3_qvhan")]
+position = Vector2(675, 0)
+
+[node name="Brick11" parent="HBoxContainer" unique_id=1749229034 instance=ExtResource("3_qvhan")]
+position = Vector2(750, 0)
