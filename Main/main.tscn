@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://y4l246vmxhmb" path="res://Paddle/Paddle.tscn" id="1_yh5la"]
 [ext_resource type="PackedScene" uid="uid://c3arr2135u626" path="res://Ball/ball.tscn" id="2_2w1kt"]
 [ext_resource type="PackedScene" uid="uid://dvu7r8uwde23f" path="res://Brick/BlueBrick.tscn" id="3_qvhan"]
+[ext_resource type="PackedScene" uid="uid://bradv4l8i2scm" path="res://HUD/HUD.tscn" id="4_eunhr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2w1kt"]
 size = Vector2(40.625, 701.6719)
@@ -105,3 +106,5 @@ position = Vector2(675, 0)
 
 [node name="Brick11" parent="HBoxContainer" unique_id=1749229034 instance=ExtResource("3_qvhan")]
 position = Vector2(750, 0)
+
+[node name="Hud" parent="." unique_id=369180063 instance=ExtResource("4_eunhr")]
