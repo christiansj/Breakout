@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dvu7r8uwde23f" path="res://Brick/BlueBrick.tscn" id="3_qvhan"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2w1kt"]
-size = Vector2(36.625, 564.6875)
+size = Vector2(40.625, 701.6719)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0mwmh"]
 size = Vector2(832, 42)
@@ -28,10 +28,11 @@ position = Vector2(347, 367)
 position = Vector2(-3, 324)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Left Wall" unique_id=708992054]
-position = Vector2(17.875, 19.34375)
+position = Vector2(18.6875, 39.164063)
 shape = SubResource("RectangleShape2D_2w1kt")
 
 [node name="ColorRect" type="ColorRect" parent="Left Wall" unique_id=893491001]
+offset_left = -1.0
 offset_top = -265.0
 offset_right = 39.0
 offset_bottom = 396.0
@@ -40,16 +41,16 @@ color = Color(0.38039216, 0.38039216, 0.38039216, 1)
 [node name="Right Wall" type="StaticBody2D" parent="." unique_id=1425926053]
 position = Vector2(905, 310)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Right Wall" unique_id=1616585500]
-position = Vector2(-23.3125, 24.3125)
-shape = SubResource("RectangleShape2D_2w1kt")
-
 [node name="ColorRect" type="ColorRect" parent="Right Wall" unique_id=345093633]
 offset_left = -44.0
 offset_top = -251.0
 offset_right = -4.0
 offset_bottom = 406.0
 color = Color(0.38039216, 0.38039216, 0.38039216, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right Wall" unique_id=1616585500]
+position = Vector2(-24.5, 72.984375)
+shape = SubResource("RectangleShape2D_2w1kt")
 
 [node name="Ceiling" type="StaticBody2D" parent="." unique_id=1156820790]
 position = Vector2(41, 100)

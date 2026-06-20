@@ -20,7 +20,7 @@ public partial class Paddle : CharacterBody2D
 	public override void _Process(double delta)
 	{
 		Position = new Vector2(
-			x: Mathf.Clamp(GetViewport().GetMousePosition().X -50, 0, ScreenSize.X - 120),
+			x: Mathf.Clamp(GetViewport().GetMousePosition().X -50, 35, ScreenSize.X - 160),
 			y: Mathf.Clamp(Position.Y, 0, ScreenSize.Y)	
 		);
 	}
