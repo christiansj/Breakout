@@ -6,7 +6,7 @@
 size = Vector2(100, 20)
 
 [node name="Paddle" type="Area2D" unique_id=1743650328]
-position = Vector2(288, 609)
+position = Vector2(291, 666)
 script = ExtResource("1_f50pn")
 metadata/_edit_group_ = true
 
