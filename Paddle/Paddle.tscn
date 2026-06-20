@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4hwu2"]
 size = Vector2(100, 20)
 
-[node name="Paddle" type="Area2D" unique_id=1743650328]
+[node name="Paddle" type="CharacterBody2D" unique_id=1863722807]
 position = Vector2(308, 628)
 script = ExtResource("1_f50pn")
 metadata/_edit_group_ = true
@@ -17,5 +17,3 @@ offset_bottom = 20.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1708887826]
 position = Vector2(50, 10)
 shape = SubResource("RectangleShape2D_4hwu2")
-
-[connection signal="body_entered" from="." to="." method="OnBodyEntered"]
