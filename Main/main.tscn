@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://b50esatj28uku"]
 
+[ext_resource type="Script" uid="uid://ejuyn4s0fpj" path="res://Main/Main.cs" id="1_k3v36"]
 [ext_resource type="PackedScene" uid="uid://y4l246vmxhmb" path="res://Paddle/Paddle.tscn" id="1_yh5la"]
 [ext_resource type="PackedScene" uid="uid://c3arr2135u626" path="res://Ball/ball.tscn" id="2_2w1kt"]
 [ext_resource type="PackedScene" uid="uid://dvu7r8uwde23f" path="res://Brick/BlueBrick.tscn" id="3_qvhan"]
@@ -12,6 +13,7 @@ size = Vector2(40.625, 701.6719)
 size = Vector2(832, 42)
 
 [node name="Main" type="Node" unique_id=1755997133]
+script = ExtResource("1_k3v36")
 
 [node name="Background" type="ColorRect" parent="." unique_id=500713794]
 z_index = -5
@@ -108,3 +110,15 @@ position = Vector2(675, 0)
 position = Vector2(750, 0)
 
 [node name="Hud" parent="." unique_id=369180063 instance=ExtResource("4_eunhr")]
+
+[connection signal="body_entered" from="HBoxContainer/Brick" to="." method="OnBlueBrickHit"]
+[connection signal="body_entered" from="HBoxContainer/Brick2" to="." method="OnBlueBrickHit"]
+[connection signal="body_entered" from="HBoxContainer/Brick3" to="." method="OnBlueBrickHit"]
+[connection signal="body_entered" from="HBoxContainer/Brick4" to="." method="OnBlueBrickHit"]
+[connection signal="body_entered" from="HBoxContainer/Brick5" to="." method="OnBlueBrickHit"]
+[connection signal="body_entered" from="HBoxContainer/Brick6" to="." method="OnBlueBrickHit"]
+[connection signal="body_entered" from="HBoxContainer/Brick7" to="." method="OnBlueBrickHit"]
+[connection signal="body_entered" from="HBoxContainer/Brick8" to="." method="OnBlueBrickHit"]
+[connection signal="body_entered" from="HBoxContainer/Brick9" to="." method="OnBlueBrickHit"]
+[connection signal="body_entered" from="HBoxContainer/Brick10" to="." method="OnBlueBrickHit"]
+[connection signal="body_entered" from="HBoxContainer/Brick11" to="." method="OnBlueBrickHit"]

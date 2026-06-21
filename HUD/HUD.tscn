@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://bradv4l8i2scm"]
 
+[ext_resource type="Script" uid="uid://fc1rbjr54x32" path="res://HUD/Hud.cs" id="1_b7ubu"]
 [ext_resource type="FontFile" uid="uid://8ecqixtjxdo3" path="res://fonts/PixelFont.ttf" id="1_f31rt"]
 
 [node name="Hud" type="CanvasLayer" unique_id=369180063]
+script = ExtResource("1_b7ubu")
 
-[node name="Label" type="Label" parent="." unique_id=901320366]
+[node name="ScoreLabel" type="Label" parent="." unique_id=901320366]
 anchors_preset = -1
 anchor_left = 0.42722222
 anchor_right = 0.573
