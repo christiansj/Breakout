@@ -5,7 +5,7 @@ public partial class Hud : CanvasLayer
 {
     public void UpdateScore(int score)
     {
-        String scoreString = "";
+        String scoreString;
         if(score < 100 && score > 9)
         {
             scoreString = "0" + score.ToString();
