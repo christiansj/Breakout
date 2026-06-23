@@ -11,8 +11,14 @@ public partial class Ball : CharacterBody2D
     public override void _Ready()
 	{
 		Velocity = new Vector2(-200, 200).Normalized() * Speed;
+        
 	}
     
+    public void Serve()
+    {
+        SetPosition(new Vector2(450, 360));
+    }
+
     public override void _PhysicsProcess(double delta)
     {
         KinematicCollision2D collision = MoveAndCollide(Velocity * (float)delta);

@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4hwu2"]
 size = Vector2(120, 15)
 
-[node name="Paddle" type="CharacterBody2D" unique_id=1863722807]
+[node name="Paddle" type="CharacterBody2D" unique_id=2004166145]
 position = Vector2(308, 628)
 script = ExtResource("1_f50pn")
 metadata/_edit_group_ = true
@@ -14,6 +14,8 @@ metadata/_edit_group_ = true
 offset_right = 120.0
 offset_bottom = 15.0
 color = Color(0.9411765, 0.26666668, 0.03529412, 1)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1389559537]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1708887826]
 position = Vector2(60, 7.5)
