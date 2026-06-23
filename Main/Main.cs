@@ -5,11 +5,12 @@ public partial class Main : Node2D
     int Score = 0;
     int LifeCount = 3;
     public Vector2 ScreenSize;
-
+    private Hud Hud;
+    
     public override void _Ready()
     {
-        var hud = GetNode<Hud>("Hud");
-        hud.UpdateLifeCount(LifeCount);
+        Hud = GetNode<Hud>("Hud");
+        Hud.UpdateLifeCount(LifeCount);
     }
 
     public override void _Process(double delta)
@@ -29,11 +30,10 @@ public partial class Main : Node2D
     public void DecreaseLifeCount()
     {
         LifeCount -= 1;
-        var hud = GetNode<Hud>("Hud");
-        hud.UpdateLifeCount(LifeCount);
+        Hud.UpdateLifeCount(LifeCount);
         if(LifeCount == 0)
         {
-            hud.ShowGameOver();
+            Hud.ShowGameOver();
         }
     }
 
@@ -41,9 +41,8 @@ public partial class Main : Node2D
     {
         if(node is Ball)
         {
-            var hud = GetNode<Hud>("Hud");
             Score += incrementScoreBy;
-            hud.UpdateScore(Score);
+            Hud.UpdateScore(Score);
         }
     }
 
