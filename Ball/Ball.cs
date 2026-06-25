@@ -10,12 +10,12 @@ public partial class Ball : CharacterBody2D
 
     public override void _Ready()
 	{
-		Velocity = new Vector2(-150, 150).Normalized() * Speed;
+		Velocity = new Vector2(-150, 200).Normalized() * Speed;
 	}
     
     public void Serve()
     {
-        SetPosition(new Vector2(450, 360));
+        SetPosition(new Vector2(450, 380));
     }
 
     public override void _PhysicsProcess(double delta)
@@ -23,11 +23,10 @@ public partial class Ball : CharacterBody2D
         KinematicCollision2D collision = MoveAndCollide(Velocity * (float)delta);
         if (collision != null)
         {
+            float collisionX = collision.GetPosition().X;
             if(collision.GetCollider().GetClass() == "CharacterBody2D")
             {
                 float paddleX = (collision.GetCollider() as Node2D).Position.X;
-                float collisionX = collision.GetPosition().X;
-            
                 if(collisionX > paddleX+60)
                 {
                     if(Velocity.X < 0)

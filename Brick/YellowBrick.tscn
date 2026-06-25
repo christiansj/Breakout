@@ -26,7 +26,6 @@ position = Vector2(-2.5, 2)
 shape = SubResource("RectangleShape2D_4hwu2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=49003342]
-visible = false
 position = Vector2(-2.5, 2)
 shape = SubResource("RectangleShape2D_lrraw")
 debug_color = Color(0.98039216, 0.6, 0.69803923, 0.41960785)
