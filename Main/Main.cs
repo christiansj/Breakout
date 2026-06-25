@@ -37,26 +37,6 @@ public partial class Main : Node2D
         }
     }
 
-    private void UpdateScoreAfterHit(Node node, int incrementScoreBy)
-    {
-        if(node is Ball)
-        {
-            Score += incrementScoreBy;
-            Hud.UpdateScore(Score);
-        }
-    }
-
-    
-    public void OnBlueBrickHit(Node2D node)
-    {
-        UpdateScoreAfterHit(node, 1);
-    }
-
-    public void OnGreenBrickHit(Node2D node)
-    {
-        UpdateScoreAfterHit(node, 1);
-    }
-
     public void IncrementScore(int points)
     {
          Score += points;

@@ -10,8 +10,7 @@ public partial class Ball : CharacterBody2D
 
     public override void _Ready()
 	{
-		Velocity = new Vector2(-150, 200).Normalized() * Speed;
-        
+		Velocity = new Vector2(-150, 150).Normalized() * Speed;
 	}
     
     public void Serve()
@@ -44,9 +43,10 @@ public partial class Ball : CharacterBody2D
                     }
                 }
             }
+            
             var reflect = collision.GetRemainder().Bounce(collision.GetNormal());
             Velocity = Velocity.Bounce(collision.GetNormal());
-            MoveAndCollide(reflect);
+            // MoveAndCollide(reflect);
         }
     }
 }
