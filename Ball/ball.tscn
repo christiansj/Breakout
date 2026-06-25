@@ -3,16 +3,15 @@
 [ext_resource type="Script" uid="uid://4iuqlojobcre" path="res://Ball/Ball.cs" id="1_65gad"]
 [ext_resource type="Texture2D" uid="uid://bfm6oek74t55f" path="res://assets/BallSprite.tres" id="1_l4sn5"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_65gad"]
-size = Vector2(21.5, 17.4375)
+[sub_resource type="CircleShape2D" id="CircleShape2D_ek1rb"]
 
 [node name="Ball" type="CharacterBody2D" unique_id=751785945]
 script = ExtResource("1_65gad")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1693896847]
-position = Vector2(0, 2.3841858e-07)
-scale = Vector2(0.765625, 0.625)
+position = Vector2(-0.31250045, 0)
+scale = Vector2(0.70703125, 0.62499994)
 texture = ExtResource("1_l4sn5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=789556658]
-shape = SubResource("RectangleShape2D_65gad")
+shape = SubResource("CircleShape2D_ek1rb")
