@@ -14,68 +14,43 @@ public partial class BrickGrid : Node
 
 	private void GenerateBricks()
 	{
-		BoxContainer row1 = GetNode<BoxContainer>("Container");
-		row1.OffsetRight = 250;
-		Brick instance;
-
-		// Red Bricks
-		for(int row = 0; row < 2; row++)
-		{
-			for(int iBrick = 0; iBrick < 10; iBrick++)
-			{
-				instance = (Brick)RedBrick.Instantiate();
-				instance.Points = 7;
-				row1.AddChild(instance);
-				instance.Translate(new Vector2(80*iBrick+1, 25*row));
-			}
-		}
-
-		// Orange Bricks
-		for(int row = 2; row < 4; row++)
-		{
-			for(int iBrick = 0; iBrick < 10; iBrick++)
-			{
-				instance = (Brick)OrangeBrick.Instantiate();
-				instance.Points = 5;
-				row1.AddChild(instance);
-				instance.Translate(new Vector2(80*iBrick+1, 25*row));
-			}
-		}
-
+		BoxContainer container = GetNode<BoxContainer>("Container");
+		container.OffsetRight = 250;
 		
-
-		// Green Bricks
-		for(int row = 4; row < 6; row++)
+		for(int row = 0; row < 8; row++)
 		{
 			for(int iBrick = 0; iBrick < 10; iBrick++)
 			{
-				instance = (Brick)GreenBrick.Instantiate();
-				instance.Points = 3;
-				row1.AddChild(instance);
-				instance.Translate(new Vector2(80*iBrick+1, 25*row));
+				Brick brick = GetBrick(row);
+				container.AddChild(brick);
+				brick.Translate(new Vector2(80*iBrick+1, 25*row));
 			}
 		}
+	}
 
-		for(int row = 6; row < 8; row++)
+	private Brick GetBrick(int row)
+	{
+		Brick brick;
+		if(row >= 6 && row < 8)
 		{
-			for(int iBrick = 0; iBrick < 10; iBrick++)
-			{
-				instance = (Brick)YellowBrick.Instantiate();
-				instance.Points = 1;
-				row1.AddChild(instance);
-				instance.Translate(new Vector2(80*iBrick+1, 25*row));
-			}
+			brick = (Brick)YellowBrick.Instantiate();
+			brick.Points = 1;
 		}
-	
-		
-		// BoxContainer row2 = GetNode<BoxContainer>("Row1");
-		// row2.OffsetRight = 250;
-		// for(int i = 0; i < 10; i++)
-		// {
-		// 	instance = (Brick)YellowBrick.Instantiate();
-		// 	instance.Points = 1;
-		// 	row2.AddChild(instance);
-		// 	instance.Translate(new Vector2(80*i+1, 25));
-		// }
+		else if(row >= 4 && row < 6)
+		{
+			brick = (Brick)GreenBrick.Instantiate();
+			brick.Points = 3;
+		}
+		else if(row >= 2 && row < 4)
+		{
+			brick = (Brick)OrangeBrick.Instantiate();
+			brick.Points = 5;
+		}
+		else
+		{
+			brick = (Brick)RedBrick.Instantiate();
+			brick.Points = 7;
+		}
+		return brick;
 	}
 }
