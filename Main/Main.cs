@@ -3,7 +3,7 @@ using Godot;
 public partial class Main : Node2D
 {
     int Score = 0;
-    int LifeCount = 3;
+    public int LifeCount = 3;
     public Vector2 ScreenSize;
     private Hud Hud;
     
@@ -24,6 +24,7 @@ public partial class Main : Node2D
             {
                 ball.Serve();
             }
+            ball.IsFollowing = true;
         }
     }
 

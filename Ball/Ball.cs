@@ -5,17 +5,35 @@ public partial class Ball : CharacterBody2D
 {
     [Export]
 	public int Speed { get; set; } = 350;
-
+    public Boolean IsFollowing {get; set;} = true;
 	public Vector2 ScreenSize;
-
+    Main main;
     public override void _Ready()
 	{
-		Velocity = new Vector2(-150, 200).Normalized() * Speed;
+        main = GetNode<Main>("/root/Main");
+        IsFollowing = true;
 	}
     
     public void Serve()
     {
-        SetPosition(new Vector2(450, 380));
+        Velocity = new Vector2(-200, 200).Normalized() * Speed;
+    }
+
+    public override void _Process(double delta)
+    {
+        base._Process(delta);
+        
+        if(Input.IsActionJustPressed("click") && IsFollowing && main.LifeCount > 0)
+        {
+            Serve();
+            IsFollowing = false;
+        }
+
+        if(IsFollowing)
+        {
+            Paddle paddle = GetNode<Paddle>("../Paddle");
+            SetPosition(new Vector2(paddle.Position.X + 60, paddle.Position.Y - 25));
+        }
     }
 
     public override void _PhysicsProcess(double delta)
