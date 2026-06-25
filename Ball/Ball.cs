@@ -10,7 +10,7 @@ public partial class Ball : CharacterBody2D
 
     public override void _Ready()
 	{
-		Velocity = new Vector2(-200, 200).Normalized() * Speed;
+		Velocity = new Vector2(-150, 200).Normalized() * Speed;
         
 	}
     

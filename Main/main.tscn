@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://y4l246vmxhmb" path="res://Paddle/Paddle.tscn" id="1_yh5la"]
 [ext_resource type="PackedScene" uid="uid://c3arr2135u626" path="res://Ball/ball.tscn" id="2_2w1kt"]
 [ext_resource type="PackedScene" uid="uid://bradv4l8i2scm" path="res://HUD/HUD.tscn" id="4_eunhr"]
-[ext_resource type="PackedScene" uid="uid://oyfrsfk2ap1x" path="res://Brick/Bricks.tscn" id="5_k3v36"]
+[ext_resource type="PackedScene" uid="uid://oyfrsfk2ap1x" path="res://Brick/BrickGrid.tscn" id="5_k3v36"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2w1kt"]
 size = Vector2(40.625, 701.6719)

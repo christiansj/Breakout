@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://oyfrsfk2ap1x"]
+
+[ext_resource type="Script" uid="uid://dro6vx2n8hgrh" path="res://Brick/BrickGrid.cs" id="1_absvo"]
+
+[node name="BrickGrid" type="Node" unique_id=1609475215]
+script = ExtResource("1_absvo")
+
+[node name="Container" type="HBoxContainer" parent="." unique_id=929173819]
+offset_left = 92.0
+offset_top = 176.0
+offset_right = 892.0
+offset_bottom = 216.0

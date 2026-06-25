@@ -13,7 +13,7 @@ metadata/_edit_group_ = true
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1358361760]
 offset_right = 120.0
 offset_bottom = 15.0
-color = Color(0.9411765, 0.26666668, 0.03529412, 1)
+color = Color(0, 0.41033864, 1.0428972, 1)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1389559537]
 
