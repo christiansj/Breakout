@@ -56,4 +56,10 @@ public partial class Main : Node2D
     {
         UpdateScoreAfterHit(node, 1);
     }
+
+    public void IncrementScore(int points)
+    {
+         Score += points;
+         Hud.UpdateScore(Score);
+    }
 }

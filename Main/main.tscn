@@ -3,9 +3,8 @@
 [ext_resource type="Script" uid="uid://ejuyn4s0fpj" path="res://Main/Main.cs" id="1_k3v36"]
 [ext_resource type="PackedScene" uid="uid://y4l246vmxhmb" path="res://Paddle/Paddle.tscn" id="1_yh5la"]
 [ext_resource type="PackedScene" uid="uid://c3arr2135u626" path="res://Ball/ball.tscn" id="2_2w1kt"]
-[ext_resource type="PackedScene" uid="uid://dvu7r8uwde23f" path="res://Brick/BlueBrick.tscn" id="3_qvhan"]
 [ext_resource type="PackedScene" uid="uid://bradv4l8i2scm" path="res://HUD/HUD.tscn" id="4_eunhr"]
-[ext_resource type="PackedScene" uid="uid://c7jcmgncop5ao" path="res://Brick/GreenBrick.tscn" id="5_liyct"]
+[ext_resource type="PackedScene" uid="uid://oyfrsfk2ap1x" path="res://Brick/Bricks.tscn" id="5_k3v36"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2w1kt"]
 size = Vector2(40.625, 701.6719)
@@ -26,7 +25,7 @@ color = Color(0.007843138, 0, 0, 1)
 position = Vector2(288, 660)
 
 [node name="Ball" parent="." unique_id=155020253 instance=ExtResource("2_2w1kt")]
-position = Vector2(450, 360)
+position = Vector2(450, 408)
 
 [node name="Left Wall" type="StaticBody2D" parent="." unique_id=1043024495]
 position = Vector2(-3, 324)
@@ -36,9 +35,9 @@ position = Vector2(18.6875, 39.164063)
 shape = SubResource("RectangleShape2D_2w1kt")
 
 [node name="ColorRect" type="ColorRect" parent="Left Wall" unique_id=893491001]
-offset_left = -1.0
+offset_left = 2.0
 offset_top = -265.0
-offset_right = 39.0
+offset_right = 42.0
 offset_bottom = 396.0
 color = Color(0.38039216, 0.38039216, 0.38039216, 1)
 
@@ -71,105 +70,6 @@ offset_right = 826.0
 offset_bottom = -1.0
 color = Color(0.38039216, 0.38039216, 0.38039216, 1)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1333731700]
-offset_left = 76.0
-offset_top = 322.0
-offset_right = 915.0
-offset_bottom = 336.0
-metadata/_edit_group_ = true
-
-[node name="Brick" parent="HBoxContainer" unique_id=1851945389 instance=ExtResource("3_qvhan")]
-
-[node name="Brick2" parent="HBoxContainer" unique_id=719363145 instance=ExtResource("3_qvhan")]
-position = Vector2(75, 0)
-
-[node name="Brick3" parent="HBoxContainer" unique_id=2074154816 instance=ExtResource("3_qvhan")]
-position = Vector2(150, 0)
-
-[node name="Brick4" parent="HBoxContainer" unique_id=229209044 instance=ExtResource("3_qvhan")]
-position = Vector2(225, 0)
-
-[node name="Brick5" parent="HBoxContainer" unique_id=423828785 instance=ExtResource("3_qvhan")]
-position = Vector2(300, 0)
-
-[node name="Brick6" parent="HBoxContainer" unique_id=1725619318 instance=ExtResource("3_qvhan")]
-position = Vector2(375, 0)
-
-[node name="Brick7" parent="HBoxContainer" unique_id=1132262093 instance=ExtResource("3_qvhan")]
-position = Vector2(450, 0)
-
-[node name="Brick8" parent="HBoxContainer" unique_id=373472343 instance=ExtResource("3_qvhan")]
-position = Vector2(525, 0)
-
-[node name="Brick9" parent="HBoxContainer" unique_id=322892117 instance=ExtResource("3_qvhan")]
-position = Vector2(600, 0)
-
-[node name="Brick10" parent="HBoxContainer" unique_id=1158638343 instance=ExtResource("3_qvhan")]
-position = Vector2(675, 0)
-
-[node name="Brick11" parent="HBoxContainer" unique_id=1749229034 instance=ExtResource("3_qvhan")]
-position = Vector2(750, 0)
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=1014911348]
-offset_left = 76.0
-offset_top = 299.0
-offset_right = 915.0
-offset_bottom = 313.0
-
-[node name="GreenBrick" parent="HBoxContainer2" unique_id=682907494 instance=ExtResource("5_liyct")]
-position = Vector2(0, 3)
-
-[node name="GreenBrick2" parent="HBoxContainer2" unique_id=1682135516 instance=ExtResource("5_liyct")]
-position = Vector2(75, 3)
-
-[node name="GreenBrick3" parent="HBoxContainer2" unique_id=1297807920 instance=ExtResource("5_liyct")]
-position = Vector2(150, 3)
-
-[node name="GreenBrick4" parent="HBoxContainer2" unique_id=16908628 instance=ExtResource("5_liyct")]
-position = Vector2(225, 3)
-
-[node name="GreenBrick5" parent="HBoxContainer2" unique_id=1092573825 instance=ExtResource("5_liyct")]
-position = Vector2(300, 3)
-
-[node name="GreenBrick6" parent="HBoxContainer2" unique_id=497119512 instance=ExtResource("5_liyct")]
-position = Vector2(375, 3)
-
-[node name="GreenBrick7" parent="HBoxContainer2" unique_id=2049975605 instance=ExtResource("5_liyct")]
-position = Vector2(450, 3)
-
-[node name="GreenBrick8" parent="HBoxContainer2" unique_id=247930055 instance=ExtResource("5_liyct")]
-position = Vector2(525, 3)
-
-[node name="GreenBrick9" parent="HBoxContainer2" unique_id=2140287347 instance=ExtResource("5_liyct")]
-position = Vector2(600, 3)
-
-[node name="GreenBrick10" parent="HBoxContainer2" unique_id=1916287052 instance=ExtResource("5_liyct")]
-position = Vector2(675, 3)
-
-[node name="GreenBrick11" parent="HBoxContainer2" unique_id=1788919085 instance=ExtResource("5_liyct")]
-position = Vector2(750, 3)
-
 [node name="Hud" parent="." unique_id=369180063 instance=ExtResource("4_eunhr")]
 
-[connection signal="body_entered" from="HBoxContainer/Brick" to="." method="OnBlueBrickHit"]
-[connection signal="body_entered" from="HBoxContainer/Brick2" to="." method="OnBlueBrickHit"]
-[connection signal="body_entered" from="HBoxContainer/Brick3" to="." method="OnBlueBrickHit"]
-[connection signal="body_entered" from="HBoxContainer/Brick4" to="." method="OnBlueBrickHit"]
-[connection signal="body_entered" from="HBoxContainer/Brick5" to="." method="OnBlueBrickHit"]
-[connection signal="body_entered" from="HBoxContainer/Brick6" to="." method="OnBlueBrickHit"]
-[connection signal="body_entered" from="HBoxContainer/Brick7" to="." method="OnBlueBrickHit"]
-[connection signal="body_entered" from="HBoxContainer/Brick8" to="." method="OnBlueBrickHit"]
-[connection signal="body_entered" from="HBoxContainer/Brick9" to="." method="OnBlueBrickHit"]
-[connection signal="body_entered" from="HBoxContainer/Brick10" to="." method="OnBlueBrickHit"]
-[connection signal="body_entered" from="HBoxContainer/Brick11" to="." method="OnBlueBrickHit"]
-[connection signal="body_entered" from="HBoxContainer2/GreenBrick" to="." method="OnGreenBrickHit"]
-[connection signal="body_entered" from="HBoxContainer2/GreenBrick2" to="." method="OnGreenBrickHit"]
-[connection signal="body_entered" from="HBoxContainer2/GreenBrick3" to="." method="OnGreenBrickHit"]
-[connection signal="body_entered" from="HBoxContainer2/GreenBrick4" to="." method="OnGreenBrickHit"]
-[connection signal="body_entered" from="HBoxContainer2/GreenBrick5" to="." method="OnGreenBrickHit"]
-[connection signal="body_entered" from="HBoxContainer2/GreenBrick6" to="." method="OnGreenBrickHit"]
-[connection signal="body_entered" from="HBoxContainer2/GreenBrick7" to="." method="OnGreenBrickHit"]
-[connection signal="body_entered" from="HBoxContainer2/GreenBrick8" to="." method="OnGreenBrickHit"]
-[connection signal="body_entered" from="HBoxContainer2/GreenBrick9" to="." method="OnGreenBrickHit"]
-[connection signal="body_entered" from="HBoxContainer2/GreenBrick10" to="." method="OnGreenBrickHit"]
-[connection signal="body_entered" from="HBoxContainer2/GreenBrick11" to="." method="OnGreenBrickHit"]
+[node name="Bricks" parent="." unique_id=1466911615 instance=ExtResource("5_k3v36")]
