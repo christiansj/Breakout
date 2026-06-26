@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://delenk6ugxhrv" path="res://Paddle/Paddle.cs" id="1_f50pn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4hwu2"]
-size = Vector2(120, 15)
+size = Vector2(94, 15)
 
 [node name="Paddle" type="CharacterBody2D" unique_id=2004166145]
 position = Vector2(308, 628)
@@ -11,10 +11,10 @@ script = ExtResource("1_f50pn")
 metadata/_edit_group_ = true
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1358361760]
-offset_right = 120.0
+offset_right = 100.0
 offset_bottom = 15.0
 color = Color(0, 0.41033864, 1.0428972, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1708887826]
-position = Vector2(60, 7.5)
+position = Vector2(51, 7.5)
 shape = SubResource("RectangleShape2D_4hwu2")
