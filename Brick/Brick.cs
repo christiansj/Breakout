@@ -10,18 +10,27 @@ public partial class Brick : Area2D
         if(node is Ball)
         {
             QueueFree();
-            Main main = GetNode<Main>("/root/Main/");
-            main.IncrementScore(Points);
-            Ball ball = GetNode<Ball>("/root/Main/Ball/");
-            if(Points == 3)
-            {
-                ball.Velocity *= 1.025f;
-            }else if (Points > 3)
-            {
-                ball.Velocity *= 1.04f;
-            }
-            
-            GD.Print(ball.Velocity);
+            IncrementGameScore();
+            IncreaseBallVelocity();
         }
     } 
+
+    private void IncrementGameScore()
+    {
+        Main main = GetNode<Main>("/root/Main/");
+        main.IncrementScore(Points);
+    }
+
+    private void IncreaseBallVelocity()
+    {
+        Ball ball = GetNode<Ball>("/root/Main/Ball/");
+        if(Points == 3)
+        {
+            ball.IncreaseVelocity(1.025f);
+        }
+        else if (Points > 3)
+        {
+            ball.IncreaseVelocity(1.04f);
+        }
+    }
 }

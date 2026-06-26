@@ -47,4 +47,9 @@ public partial class Ball : CharacterBody2D
             MoveAndCollide(reflect);
         }
     }
+
+    public void IncreaseVelocity(float multiplier)
+    {
+        Velocity *= multiplier;
+    }
 }
