@@ -2,15 +2,20 @@
 
 [ext_resource type="Script" uid="uid://3qocbh5mbxdk" path="res://Brick/Brick.cs" id="1_f2pvm"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lrraw"]
+size = Vector2(75, 24)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4hwu2"]
 size = Vector2(73, 18)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lrraw"]
-size = Vector2(79, 24)
 
 [node name="YellowBrick" type="Area2D" unique_id=682907494]
 script = ExtResource("1_f2pvm")
 metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=49003342]
+position = Vector2(-2.5, 2)
+shape = SubResource("RectangleShape2D_lrraw")
+debug_color = Color(0.98039216, 0.6, 0.69803923, 0.41960785)
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1325609584]
 offset_left = -40.0
@@ -24,10 +29,5 @@ color = Color(1, 1, 0, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=475854644]
 position = Vector2(-2.5, 2)
 shape = SubResource("RectangleShape2D_4hwu2")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=49003342]
-position = Vector2(-2.5, 2)
-shape = SubResource("RectangleShape2D_lrraw")
-debug_color = Color(0.98039216, 0.6, 0.69803923, 0.41960785)
 
 [connection signal="body_entered" from="." to="." method="OnBodyEntered"]

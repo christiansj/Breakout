@@ -32,5 +32,6 @@ public partial class Brick : Area2D
         {
             ball.IncreaseVelocity(1.04f);
         }
+        GD.Print(ball.Velocity);
     }
 }
