@@ -4,7 +4,7 @@ using System;
 public partial class Ball : CharacterBody2D
 {
     [Export]
-	public int Speed { get; set; } = 350;
+	public float Speed { get; set; } = 350;
     public Boolean IsFollowing {get; set;} = true;
 	public Vector2 ScreenSize;
     Main main;
@@ -17,7 +17,7 @@ public partial class Ball : CharacterBody2D
     
     public void Serve()
     {
-        Velocity = new Vector2(-100, 200).Normalized() * Speed;
+        Velocity = new Vector2(-130, 200).Normalized() * Speed;
     }
 
     public override void _Process(double delta)

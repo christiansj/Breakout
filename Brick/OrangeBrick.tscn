@@ -6,7 +6,7 @@
 size = Vector2(73, 18)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lrraw"]
-size = Vector2(79, 24)
+size = Vector2(79, 25)
 
 [node name="OrangeBrick" type="Area2D" unique_id=682907494]
 script = ExtResource("1_18q5n")
@@ -26,8 +26,7 @@ position = Vector2(-2.5, 2)
 shape = SubResource("RectangleShape2D_4hwu2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=49003342]
-visible = false
-position = Vector2(-2.5, 2)
+position = Vector2(-2.5, 2.5)
 shape = SubResource("RectangleShape2D_lrraw")
 debug_color = Color(0.98039216, 0.6, 0.69803923, 0.41960785)
 

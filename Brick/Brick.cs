@@ -12,6 +12,16 @@ public partial class Brick : Area2D
             QueueFree();
             Main main = GetNode<Main>("/root/Main/");
             main.IncrementScore(Points);
+            Ball ball = GetNode<Ball>("/root/Main/Ball/");
+            if(Points == 3)
+            {
+                ball.Velocity *= 1.025f;
+            }else if (Points > 3)
+            {
+                ball.Velocity *= 1.04f;
+            }
+            
+            GD.Print(ball.Velocity);
         }
     } 
 }
