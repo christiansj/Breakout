@@ -72,4 +72,4 @@ color = Color(0.38039216, 0.38039216, 0.38039216, 1)
 
 [node name="Hud" parent="." unique_id=369180063 instance=ExtResource("4_eunhr")]
 
-[node name="Bricks" parent="." unique_id=1466911615 instance=ExtResource("5_k3v36")]
+[node name="BrickGrid" parent="." unique_id=1466911615 instance=ExtResource("5_k3v36")]

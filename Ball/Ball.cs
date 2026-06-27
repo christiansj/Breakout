@@ -4,35 +4,34 @@ using System;
 public partial class Ball : CharacterBody2D
 {
     [Export]
-	public float Speed { get; set; } = 350;
-    public Boolean IsFollowing {get; set;} = true;
-	public Vector2 ScreenSize;
+	private float _speed { get; set; } = 350;
+    public bool _isFollowing {get; set;} = true;
     private const int MIN_VELOCITY = 140;
     private const int MAX_VELOCITY = 620;
-    Main main;
+    private Main _main;
     
     public override void _Ready()
 	{
-        main = GetNode<Main>("/root/Main");
-        IsFollowing = true;
+        _main = GetNode<Main>("/root/Main");
+        _isFollowing = true;
 	}
     
     public void Serve()
     {
-        Velocity = new Vector2(-350, 450).Normalized() * Speed;
+        Velocity = new Vector2(-350, 450).Normalized() * _speed;
     }
 
     public override void _Process(double delta)
     {
         base._Process(delta);
         
-        if(Input.IsActionJustPressed("click") && IsFollowing && main.LifeCount > 0)
+        if(Input.IsActionJustPressed("click") && _isFollowing && _main.GetLifeCount() > 0)
         {
             Serve();
-            IsFollowing = false;
+            _isFollowing = false;
         }
 
-        if(IsFollowing)
+        if(_isFollowing)
         {
             Paddle paddle = GetNode<Paddle>("../Paddle");
             SetPosition(new Vector2(paddle.Position.X + 50, paddle.Position.Y - 25));
@@ -51,7 +50,7 @@ public partial class Ball : CharacterBody2D
         SetMinimumVelocity();
         SetMaximumVelocity();
     }
-    
+
     private void SetMinimumVelocity()
     {
         if(Velocity.Y <= 0 && Velocity.Y >= -MIN_VELOCITY)
@@ -96,5 +95,15 @@ public partial class Ball : CharacterBody2D
     public void IncreaseVelocity(float multiplier)
     {
         Velocity *= multiplier;
+    }
+
+    public bool GetIsFollowing()
+    {
+        return _isFollowing;
+    }
+
+    public void SetIsFollowing(bool isFollowing)
+    {
+        _isFollowing = isFollowing;
     }
 }

@@ -3,17 +3,17 @@ using System;
 
 public partial class Hud : CanvasLayer
 {
-    Label GameOverLabel;
-    Label ScoreLabel;
-    Label LifeCountLabel;
+    private Label _gameOverLabel;
+    private Label _scoreLabel;
+    private Label _lifeCountLabel;
 
     public override void _Ready()
     {
-        GameOverLabel = GetNode<Label>("GameOverLabel");
-        ScoreLabel = GetNode<Label>("ScoreLabel");
-        LifeCountLabel = GetNode<Label>("LifeCountLabel");
+        _gameOverLabel = GetNode<Label>("GameOverLabel");
+        _scoreLabel = GetNode<Label>("ScoreLabel");
+        _lifeCountLabel = GetNode<Label>("LifeCountLabel");
         
-        GameOverLabel.Hide();
+        _gameOverLabel.Hide();
     }
 
     public void UpdateScore(int score)
@@ -31,16 +31,16 @@ public partial class Hud : CanvasLayer
         {
             scoreString = score.ToString();
         }
-        ScoreLabel.Text = scoreString;
+        _scoreLabel.Text = scoreString;
     }
     
     public void UpdateLifeCount(int lifeCount)
     {
-        LifeCountLabel.Text = lifeCount.ToString();
+        _lifeCountLabel.Text = lifeCount.ToString();
     }
 
     public void ShowGameOver()
     {
-        GameOverLabel.Show();
+        _gameOverLabel.Show();
     }
 }

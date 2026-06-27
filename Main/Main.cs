@@ -2,45 +2,66 @@ using Godot;
 
 public partial class Main : Node2D
 {
-    int Score = 0;
-    public int LifeCount = 3;
-    public Vector2 ScreenSize;
-    private Hud Hud;
+    private int _score = 0;
+    private int _lifeCount = 6;
+    private Vector2 _screenSize;
+    private Hud _hud;
+    private Ball _ball;
+    private BrickGrid _brickGrid;
+    private int _round = 1;
     
     public override void _Ready()
     {
-        Hud = GetNode<Hud>("Hud");
-        Hud.UpdateLifeCount(LifeCount);
+        _hud = GetNode<Hud>("Hud");
+        _brickGrid = GetNode<BrickGrid>("BrickGrid");
+        _ball = GetNode<Ball>("Ball");
+        _screenSize = GetViewportRect().Size;
+        _hud.UpdateLifeCount(_lifeCount);
     }
 
-    public override void _Process(double delta)
+    public async override void _Process(double delta)
     {
-        ScreenSize = GetViewportRect().Size;
-        Ball ball = GetNode<Ball>("Ball");
-        if(ball.Position.Y > ScreenSize.Y & LifeCount > 0)
+        if(_ball.Position.Y > _screenSize.Y & _lifeCount > 0)
         {
             DecreaseLifeCount();
-            if(LifeCount > 0)
+            if(_lifeCount > 0)
             {
-                ball.Serve();
+                _ball.Serve();
             }
-            ball.IsFollowing = true;
+            _ball.SetIsFollowing(true);
         }
     }
 
     public void DecreaseLifeCount()
     {
-        LifeCount -= 1;
-        Hud.UpdateLifeCount(LifeCount);
-        if(LifeCount == 0)
+        _lifeCount -= 1;
+        _hud.UpdateLifeCount(_lifeCount);
+        if(_lifeCount == 0)
         {
-            Hud.ShowGameOver();
+            _hud.ShowGameOver();
         }
     }
 
     public void IncrementScore(int points)
     {
-         Score += points;
-         Hud.UpdateScore(Score);
+         _score += points;
+         _hud.UpdateScore(_score);
+    }
+
+    public bool IsBrickGridEmpty()
+    {
+        return _brickGrid.IsGridEmpty();
+    }
+
+    public void HandleClearGrid()
+    {
+        _round += 1;
+        _ball.SetIsFollowing(true);
+        _brickGrid.GenerateBricks();
+    }
+
+    public int GetLifeCount()
+    {
+        return _lifeCount;
     }
 }
